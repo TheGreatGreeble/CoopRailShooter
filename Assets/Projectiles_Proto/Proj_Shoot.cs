@@ -26,6 +26,8 @@ public class Proj_Shoot : MonoBehaviour
     // Shoot()1 spawns a projectile at the Proj_point with its default velocity and acceleration
     public void Shoot(GameObject projectile) {
         if (projectile == null) return;
+
+        // spawn the projectile and move it to the right position.
         GameObject proj = Instantiate(projectile);
         proj.transform.position = proj_point.position;
     }
