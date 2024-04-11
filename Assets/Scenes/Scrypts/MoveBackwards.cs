@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Rigidbody))]
-public class MoveBackwardWithRigidbody : MonoBehaviour
+public class MoveBackward : MonoBehaviour
 {
     public float speed = .5f;
     private Rigidbody rb;

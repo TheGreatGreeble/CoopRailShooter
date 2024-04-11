@@ -254,7 +254,7 @@ Transform:
   m_GameObject: {fileID: 531910638}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: 0, y: 19.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -323,7 +323,7 @@ Transform:
   m_GameObject: {fileID: 759942945}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3.79, y: 1.213, z: -2.62}
+  m_LocalPosition: {x: -3.79, y: 0.517, z: -9.23}
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -412,6 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9939c2ec0d13d894184050a04fe22565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
   speed: 0.5
 --- !u!54 &759942951
 Rigidbody:
@@ -636,7 +637,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 1, z: 3}
+  m_LocalScale: {x: 2, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -751,7 +752,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dba717caf83864641b74249cbc241a07, type: 2}
+  - {fileID: 2100000, guid: e75dbeb283ef8fa4e810a880b95ee63f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -790,7 +791,7 @@ Transform:
   m_GameObject: {fileID: 1701284760}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3.79, y: 1.213, z: -3.818}
+  m_LocalPosition: {x: -3.79, y: 0.533, z: -7.75}
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -805,10 +806,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1701284760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5db9f668e9cd8e40b9c3620791ffe8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9939c2ec0d13d894184050a04fe22565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  active: 0
+  speed: -0.5
 --- !u!1 &1735906622
 GameObject:
   m_ObjectHideFlags: 0
