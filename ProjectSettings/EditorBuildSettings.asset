@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Chaplin.unity
+    guid: 9ad44f850d08e494dbea1e1e46f28713
   m_configObjects: {}
