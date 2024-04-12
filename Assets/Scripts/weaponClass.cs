@@ -9,8 +9,8 @@ public class Weapon : MonoBehaviour
     public float range = 100f;
     public float damage = 50f;
 
-    //OVERRIDE THIS VARIABLE TO THE PROJECTILE BEING SHOT IN WEAPON SCRIPTS
-    public GameObject bullet;
+     //OVERRIDE THIS VARIABLE TO THE PROJECTILE BEING SHOT IN WEAPON SCRIPTS
+     public GameObject baseBullet;
 
     private float nextTimeToFire = 0f;
 

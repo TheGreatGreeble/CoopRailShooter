@@ -5,9 +5,7 @@ using UnityEngine;
 public class peaShooter : Weapon
 {
     // Variables to define weapon behavior
-
-    //OVERRIDE THIS VARIABLE TO THE PROJECTILE BEING SHOT IN WEAPON SCRIPTS
-    public new GameObject bullet;
+    [SerializeField] public GameObject bullet;
 
     // Update is called once per frame
     public override void Update()
@@ -17,7 +15,7 @@ public class peaShooter : Weapon
 
     public override void Shoot()
     {
-        //Instantiate(bullet, self.transform.position, self.transform.rotation);
+        Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation);
     }
 }
 
