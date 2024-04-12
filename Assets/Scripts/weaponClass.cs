@@ -9,6 +9,8 @@ public class Weapon : MonoBehaviour
     public float range = 100f;
     public float damage = 50f;
 
+    [SerializeField] public int player;
+
      //OVERRIDE THIS VARIABLE TO THE PROJECTILE BEING SHOT IN WEAPON SCRIPTS
      public GameObject baseBullet;
 
