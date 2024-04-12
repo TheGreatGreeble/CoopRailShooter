@@ -5,8 +5,7 @@ using UnityEngine;
 public class peaShooter : Weapon
 {
     // Variables to define weapon behavior
-    [SerializeField] public GameObject bullet;
-    private Quaternion bulletRotation;
+    //[SerializeField] public GameObject bullet;
 
     // Update is called once per frame
     public override void Update()
@@ -16,15 +15,7 @@ public class peaShooter : Weapon
 
     public override void Shoot()
     {
-        if (player == 1) {
-            bulletRotation = gameObject.transform.rotation;
-        }
-        else {
-            bulletRotation = gameObject.transform.rotation * Quaternion.Euler(0f, 180f, 0f);
-        }
-
-        //spawn bullet
-        Instantiate(bullet, gameObject.transform.position, bulletRotation);
+        base.Shoot();
     }
 }
 
