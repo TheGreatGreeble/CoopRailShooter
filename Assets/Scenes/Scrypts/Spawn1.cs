@@ -24,7 +24,11 @@ public class Spawner : MonoBehaviour
             Vector3 spawnPosition = new Vector3(randomX, transform.position.y, -5);
 
             // Instantiate a new object at the spawnPosition with no rotation
-            Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+            GameObject spawnedObject = Instantiate(objectToSpawn, spawnPosition, transform.rotation);
+            MoveForward moveForward = spawnedObject.GetComponent<MoveForward>();
+
+            moveForward.Activate(0.5f);
+
 
             // Wait for 1 second before spawning the next object
             yield return new WaitForSeconds(1f);
