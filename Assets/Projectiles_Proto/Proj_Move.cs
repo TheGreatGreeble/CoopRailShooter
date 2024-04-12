@@ -47,9 +47,9 @@ public class Proj_Move : MonoBehaviour
 
     // collision detection for projectile
     private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.tag == "Killable") {
-            // KILL KILL KILL
-            Destroy(other.gameObject);
+        MoveForward component = other.gameObject.GetComponent<MoveForward>();
+        if (component) {
+            component.TakeDamage(5);
         }
     }
 }

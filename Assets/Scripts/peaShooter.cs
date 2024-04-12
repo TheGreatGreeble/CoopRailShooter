@@ -22,6 +22,8 @@ public class peaShooter : Weapon
         else {
             bulletRotation = gameObject.transform.rotation * Quaternion.Euler(0f, 180f, 0f);
         }
+
+        //spawn bullet
         Instantiate(bullet, gameObject.transform.position, bulletRotation);
     }
 }
