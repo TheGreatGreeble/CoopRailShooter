@@ -51,7 +51,7 @@ public class MoveForward : MonoBehaviour
         if (health <= 0){
             Destroy(gameObject);
         }
-        if (Math.Abs(transform.position.z) <= 2)
+        if (Math.Abs(transform.position.z) <= 5)
             {
                 Destroy(gameObject); // Destroy the GameObject
         }

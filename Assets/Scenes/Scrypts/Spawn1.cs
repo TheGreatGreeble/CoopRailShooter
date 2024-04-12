@@ -18,10 +18,10 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             // Generate a random Y coordinate between 1 and 10
-            float randomX = Random.Range(-5f, 5f);
+            float randomX = Random.Range(-10f, 10f);
 
             // Create a new position vector with the random Y coordinate
-            Vector3 spawnPosition = new Vector3(randomX, transform.position.y, -5);
+            Vector3 spawnPosition = new Vector3(randomX, transform.position.y, -15);
 
             // Instantiate a new object at the spawnPosition with no rotation
             GameObject spawnedObject = Instantiate(objectToSpawn, spawnPosition, transform.rotation);
