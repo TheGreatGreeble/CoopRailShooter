@@ -16,7 +16,10 @@ public class Proj_Move : MonoBehaviour
     void Start() {
         if (rb != null) {
             // setup the velocity
-            rb.velocity = vel_start;
+            //rb.velocity = vel_start;
+            rb.velocity = Vector3.zero;
+            rb.AddRelativeForce(vel_start, ForceMode.VelocityChange);
+            //rb.AddForce(vel_start, ForceMode.VelocityChange);
             if (accel == Vector3.zero) {
                 canAccel = false;
             }

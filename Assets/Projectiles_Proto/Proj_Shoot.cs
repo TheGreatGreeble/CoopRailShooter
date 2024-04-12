@@ -30,6 +30,7 @@ public class Proj_Shoot : MonoBehaviour
         // spawn the projectile and move it to the right position.
         GameObject proj = Instantiate(projectile);
         proj.transform.position = proj_point.position;
+        proj.transform.rotation = transform.rotation;
     }
 
     // Shoot()3 spawns a projectile at the Proj_point while overriding its starting velocity and acceleration
