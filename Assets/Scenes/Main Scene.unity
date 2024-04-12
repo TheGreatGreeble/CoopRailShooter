@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 67208001}
   m_Layer: 0
   m_Name: p1 (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 174948460}
   m_Layer: 0
   m_Name: p2 (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1204,8 +1204,7 @@ MonoBehaviour:
   range: 100
   damage: 50
   player: 1
-  baseBullet: {fileID: 0}
-  bullet: {fileID: 4390976419354512532, guid: d4b1b28cf01a2ee4d883e98ece810d61, type: 3}
+  baseBullet: {fileID: 4390976419354512532, guid: d4b1b28cf01a2ee4d883e98ece810d61, type: 3}
 --- !u!65 &803048490
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1328,8 +1327,7 @@ MonoBehaviour:
   range: 100
   damage: 50
   player: 2
-  baseBullet: {fileID: 0}
-  bullet: {fileID: 4390976419354512532, guid: d4b1b28cf01a2ee4d883e98ece810d61, type: 3}
+  baseBullet: {fileID: 4390976419354512532, guid: d4b1b28cf01a2ee4d883e98ece810d61, type: 3}
 --- !u!65 &1036601765
 BoxCollider:
   m_ObjectHideFlags: 0

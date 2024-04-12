@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Proj_Move : MonoBehaviour
 {
@@ -51,5 +52,9 @@ public class Proj_Move : MonoBehaviour
         if (component) {
             component.TakeDamage(5);
         }
+        if (other.gameObject.GetTag == "Player") {
+            //SceneManager.LoadScene(0);
+        }
+        
     }
 }
