@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -51,9 +52,10 @@ public class Proj_Move : MonoBehaviour
         MoveForward component = other.gameObject.GetComponent<MoveForward>();
         if (component) {
             component.TakeDamage(5);
+            GameObject.FindWithTag("Score").GetComponent<ScoreTracker>().addScore(1);
         }
-        if (other.gameObject.GetTag == "Player") {
-            //SceneManager.LoadScene(0);
+        if (other.gameObject.tag == "Player") {
+            SceneManager.LoadScene(0);
         }
         
     }
