@@ -15,7 +15,7 @@ public class Proj_Move : MonoBehaviour
     public float lifespan = 5; // number of seconds until projectile disappears
 
     // Start is called before the first frame update
-    void Start() {
+    public virtual void Start() {
         if (rb != null) {
             // setup the velocity
             //rb.velocity = vel_start;
@@ -28,9 +28,9 @@ public class Proj_Move : MonoBehaviour
         } else {
             Debug.LogError("Projectile: " + name + " has no rigidbody");
         }
-
         // set the projectile to die after [lifespan] seconds
         StartCoroutine("KillProj", lifespan);
+
     }
 
     private void FixedUpdate() {
@@ -49,14 +49,17 @@ public class Proj_Move : MonoBehaviour
 
     // collision detection for projectile
     private void OnCollisionEnter(Collision other) {
-        MoveForward component = other.gameObject.GetComponent<MoveForward>();
+        damageEntity(other.gameObject);
+    }
+
+    public virtual void damageEntity(GameObject other) {
+        MoveForward component = other.GetComponent<MoveForward>();
         if (component) {
             component.TakeDamage(5);
             GameObject.FindWithTag("Score").GetComponent<ScoreTracker>().addScore(1);
-        }
-        if (other.gameObject.tag == "Player") {
+        } else if (other.gameObject.tag == "Player") {
             SceneManager.LoadScene(0);
         }
-        
+        Destroy(gameObject);
     }
 }

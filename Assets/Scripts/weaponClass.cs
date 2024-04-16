@@ -16,7 +16,8 @@ public class Weapon : MonoBehaviour
 
     private float nextTimeToFire = 0f;
     private Quaternion bulletRotation;
-
+    public virtual void Start() {
+    }
     // Update is called once per frame
     public virtual void Update()
     {
