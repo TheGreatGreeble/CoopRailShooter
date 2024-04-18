@@ -4,7 +4,9 @@ using System.Collections;
 public class Spawner2 : MonoBehaviour
 {
     // Reference to the object prefab you want to spawn
-    public GameObject objectToSpawn;
+    public GameObject smallObject;
+    public GameObject bigObject;
+    private GameObject objectToSpawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,11 @@ public class Spawner2 : MonoBehaviour
         {
             // Generate a random Y coordinate between 1 and 10
             float randomZ = Random.Range(-10f, 10f);
+            float randomChoice = Random.Range(0,10);
+            objectToSpawn = smallObject;
+            if (randomChoice > 8){
+                objectToSpawn = bigObject;
+            }
             // Create a new position vector with the random Y coordinate
             Vector3 spawnPosition = new Vector3(randomZ, transform.position.y, 15);
             // Instantiate a new object at the spawnPosition with no rotation
