@@ -4,6 +4,7 @@ using System.Net.Http.Headers;
 using UnityEditor;
 using UnityEngine;
 
+// SCRIPT NO LONGER NEEDED. INGORE IGNORE IGNORE
 public class Proj_Shoot : MonoBehaviour
 {
 

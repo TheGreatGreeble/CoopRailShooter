@@ -6,8 +6,8 @@ public class Weapon : MonoBehaviour
 {
     // Variables to define weapon behavior
     public float fireRate = 1f;
-    public float range = 100f;
-    public float damage = 50f;
+    //public float range = 100f;
+    //public float damage = 50f;
 
     [SerializeField] public int player;
 
@@ -16,7 +16,8 @@ public class Weapon : MonoBehaviour
 
     private float nextTimeToFire = 0f;
     private Quaternion bulletRotation;
-
+    public virtual void Start() {
+    }
     // Update is called once per frame
     public virtual void Update()
     {
