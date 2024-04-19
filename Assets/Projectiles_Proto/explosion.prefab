@@ -55,7 +55,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &115832728776652792
 MonoBehaviour:
@@ -70,10 +70,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5783281208055298778}
-  vel_start: {x: 0, y: 0, z: 20}
+  vel_start: {x: 0, y: 0, z: 0}
   accel: {x: 0, y: 0, z: 0}
+  destroyOnHit: 0
   lifespan: 5
-  expl_radius: 5
+  expl_radius: 3
 --- !u!54 &5783281208055298778
 Rigidbody:
   m_ObjectHideFlags: 0

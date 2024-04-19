@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Explosive_Proj : Proj_Move
 {
-    public float expl_radius = 3;
+    public float expl_radius = 5;
     private SphereCollider sc;
     public override void Start()
     {
@@ -18,14 +18,13 @@ public class Explosive_Proj : Proj_Move
     }
     private IEnumerator explode()
     {
-        Debug.Log("exploding");
-        float cur_rad = sc.radius;
-        while (cur_rad < expl_radius) {
-            cur_rad += 0.2f;
-            sc.radius = cur_rad;
+        while (sc.radius < expl_radius) {
+
+            sc.radius += 0.2f;
             yield return new WaitForFixedUpdate();
-            //cur_rad = Mathf.Lerp(cur_rad, expl_radius, 0.5f);
         }
+        Debug.Log("explody go by bye");
+        yield return new WaitForFixedUpdate();
         Destroy(gameObject);
     }
 }

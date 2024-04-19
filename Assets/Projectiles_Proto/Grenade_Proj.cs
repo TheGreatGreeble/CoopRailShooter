@@ -8,7 +8,8 @@ public class Grenade_Proj : Proj_Move
     public GameObject explosion;
 
     public override void damageEntity(GameObject other) {
-        Instantiate(explosion, transform.position, Quaternion.identity);
+        GameObject newExplosion = Instantiate(explosion);
+        newExplosion.transform.position = transform.position;
         Debug.Log("exploding!!!");
         Destroy(gameObject);
     }
