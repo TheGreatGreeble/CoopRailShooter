@@ -9,12 +9,11 @@ public class MoveForward : MonoBehaviour
     public float speed = 0.5f;
     private Rigidbody rb;
     private MeshRenderer meshRenderer;
-    private int health;
+    public int health = 10;
 
     void Start()
     {
         // Attempt to get the MeshRenderer component
-        health = 10;
         meshRenderer = GetComponent<MeshRenderer>();
 
         meshRenderer.enabled = false; // Optionally disable MeshRenderer on start
