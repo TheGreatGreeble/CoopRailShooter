@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 [RequireComponent(typeof(Rigidbody))]
 public class MoveForward : MonoBehaviour
@@ -50,9 +51,10 @@ public class MoveForward : MonoBehaviour
         if (health <= 0){
             Destroy(gameObject);
         }
-        if (Math.Abs(transform.position.z) <= 5)
-            {
+        if (Math.Abs(transform.position.z) <= 5) {
                 Destroy(gameObject); // Destroy the GameObject
+                //lose game
+                SceneManager.LoadScene(0);
         }
     }
 }
