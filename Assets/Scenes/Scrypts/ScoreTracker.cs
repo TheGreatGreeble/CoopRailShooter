@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ScoreTracker : MonoBehaviour
 {
-    public int score;
+    public static int score;
     private TMP_Text scoreText;
     // Start is called before the first frame update
     void Start()
