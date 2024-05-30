@@ -15,8 +15,10 @@ public class Proj_Move : MonoBehaviour
     public bool destroyOnHit = true;
     private bool canAccel = true; // sets to false if there is no acceleration to add
     public float lifespan = 5; // number of seconds until projectile disappears
+    public float piercing_limit = 0;
+    private float pierced = 0;
 
-    public float damage = 5;
+    public int damage = 5;
 
     // Start is called before the first frame update
     public virtual void Start() {
@@ -60,13 +62,13 @@ public class Proj_Move : MonoBehaviour
         Debug.Log("damage gameobject: " + other.name);
         MoveForward component = other.GetComponent<MoveForward>();
         if (component) {
-            component.TakeDamage(5);
+            component.TakeDamage(damage);
             GameObject.FindWithTag("Score").GetComponent<ScoreTracker>().addScore(1);
-            if (destroyOnHit) Destroy(gameObject);
+            if (++pierced > piercing_limit) Destroy(gameObject);
         } else if (other.gameObject.tag == "Player") {
             Debug.Log("PLAYER KILLED");
+            Destroy(gameObject);
             SceneManager.LoadScene(0);
-            if (destroyOnHit) Destroy(gameObject);
         }
         
     }
