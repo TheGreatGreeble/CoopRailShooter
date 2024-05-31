@@ -9,14 +9,20 @@ public class Shop : MonoBehaviour
     [SerializeField] public GameObject peaShooter2;
     [SerializeField] public GameObject launcher1;
     [SerializeField] public GameObject launcher2;
+    [SerializeField] public GameObject weapon31;
+    [SerializeField] public GameObject weapon32;
+    [SerializeField] public GameObject weapon41;
+    [SerializeField] public GameObject weapon42;
+    [SerializeField] public GameObject weapon51;
+    [SerializeField] public GameObject weapon52;
 
     [SerializeField] public GameObject canvasShop;
     [SerializeField] public GameObject panel1;
     [SerializeField] public GameObject panel2;
+    [SerializeField] public GameObject panel3;
+    [SerializeField] public GameObject panel4;
+    [SerializeField] public GameObject panel5;
     private List<Image> panels;
-    [SerializeField] public Outline outline1;
-    [SerializeField] public Outline outline2;
-    private List<Outline> outlines;
 
     private List<GameObject> player1Weapons;
     private List<GameObject> player2Weapons;
@@ -39,10 +45,16 @@ public class Shop : MonoBehaviour
         player1Weapons = new List<GameObject>();
         player1Weapons.Add(peaShooter1);
         player1Weapons.Add(launcher1);
+        player1Weapons.Add(weapon31);
+        player1Weapons.Add(weapon41);
+        player1Weapons.Add(weapon51);
 
         player2Weapons = new List<GameObject>();
         player2Weapons.Add(peaShooter2);
         player2Weapons.Add(launcher2);
+        player2Weapons.Add(weapon32);
+        player2Weapons.Add(weapon42);
+        player2Weapons.Add(weapon52);
 
         peaShooter1.SetActive(true);
         peaShooter2.SetActive(true);
@@ -54,7 +66,8 @@ public class Shop : MonoBehaviour
             player2Weapons[i].SetActive(false);
         }
 
-        weaponsPrice = new List<int> {0,4,20,30,40};
+
+        weaponsPrice = new List<int> {0,5,20,45,100};
         weapons1Bought = new List<int> {1,0,0,0,0};
         weapons2Bought = new List<int> {1,0,0,0,0};
 
@@ -63,11 +76,9 @@ public class Shop : MonoBehaviour
         panels = new List<Image>();
         panels.Add(panel1.GetComponent<Image>());
         panels.Add(panel2.GetComponent<Image>());
-        //outlines colors
-        outlines = new List<Outline>();
-        outlines.Add(outline1);
-        outlines.Add(outline2);
-
+        panels.Add(panel3.GetComponent<Image>());
+        panels.Add(panel4.GetComponent<Image>());
+        panels.Add(panel5.GetComponent<Image>());
     }
 
     // Update is called once per frame
@@ -80,29 +91,7 @@ public class Shop : MonoBehaviour
             if (ScoreTracker.score >= weaponsPrice[i]) {
                 panels[i].color = Color.white;
             }
-        //     // if a player currently uses it, color the panel based on their color
-        //     if (player2Weapons[i].activeInHierarchy) {
-        //         panels[i].color = Color.red;
-        //     }
-        //     if (player1Weapons[i].activeInHierarchy) {
-        //         panels[i].color = Color.blue;
-        //     }
-        //     if (player1Weapons[i].activeInHierarchy && player2Weapons[i].activeInHierarchy) {
-        //         panels[i].color = Color.magenta;
-        //     }
         }
-        // outlines is based on how owns it
-        // for (int i=0; i<outlines.Count; i+=1) {
-        //     if (weapons1Bought[i] == 1) {
-        //         outlines[i].effectColor = Color.blue;
-        //     }
-        //     if (weapons2Bought[i] == 1) {
-        //         outlines[i].effectColor = Color.red;
-        //     }
-        //     if (weapons1Bought[i] == 1 && weapons2Bought[i] == 1) {
-        //         outlines[i].effectColor = Color.magenta;
-        //     }
-        // }
         
         // check for player's turn
         if (Input.GetKeyDown(KeyCode.S))
@@ -165,6 +154,10 @@ public class Shop : MonoBehaviour
         else {
             // have enough money to buy
             if (ScoreTracker.score >= weaponsPrice[weaponNum]) {
+                for (int i=0; i<playerWeapons.Count; i+=1) {
+                    playerWeapons[i].SetActive(false);
+                }
+
                 if (otherWeapons[weaponNum].activeInHierarchy) {
                     // activate current player's weapon and deactive the one that the other player is holding
                     if (weaponNum != 0) {
@@ -174,9 +167,6 @@ public class Shop : MonoBehaviour
                     }
                 }
 
-                for (int i=0; i<playerWeapons.Count; i+=1) {
-                    playerWeapons[i].SetActive(false);
-                }
                 playerWeapons[weaponNum].SetActive(true);
                 ScoreTracker.score -= weaponsPrice[weaponNum];
                 playerBoughtWeapons[weaponNum] = 1;
@@ -223,10 +213,18 @@ public class Shop : MonoBehaviour
                 if (image.name == "emptyRedGun") {
                     image.enabled = true;
                 }
+            } else {
+                if (image.name == "emptyRedGun") {
+                    image.enabled = false;
+                }
             }
             if (weapons2Bought[i] == 1) {
                 if (image.name == "emptyBlueGun") {
                     image.enabled = true;
+                }
+            } else {
+                if (image.name == "emptyBlueGun") {
+                    image.enabled = false;
                 }
             }
 
