@@ -122,6 +122,7 @@ public class Shop : MonoBehaviour
         ShowCorrectImage();
     }
     public void activateWeapons(int weaponNum) {
+        Debug.Log("clicked on button " + weaponNum);
         // Show canvas and cursor
         Cursor.lockState = CursorLockMode.None;
         canvasShop.SetActive(false);
