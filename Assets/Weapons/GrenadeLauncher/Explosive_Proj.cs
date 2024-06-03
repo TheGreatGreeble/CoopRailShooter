@@ -6,6 +6,7 @@ public class Explosive_Proj : Proj_Move
 {
     public float expl_radius = 5;
     private SphereCollider sc;
+    private ParticleSystem ps;
     public override void Start()
     {
         base.Start();

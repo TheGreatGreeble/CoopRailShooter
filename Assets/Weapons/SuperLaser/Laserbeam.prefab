@@ -1,58 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3196539805081981193
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1059184329743638838}
-  - component: {fileID: 3199919493890761396}
-  m_Layer: 0
-  m_Name: Hitbox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1059184329743638838
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3196539805081981193}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4270036271850248321}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3199919493890761396
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3196539805081981193}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4390976419354512532
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,7 +12,7 @@ GameObject:
   - component: {fileID: 6487580213388439213}
   - component: {fileID: 8974781205374132788}
   - component: {fileID: 3289107284288825657}
-  - component: {fileID: 1595972170914395145}
+  - component: {fileID: 7790381048614182733}
   - component: {fileID: 96674918417469273}
   - component: {fileID: 6201409140688480009}
   m_Layer: 0
@@ -87,8 +34,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 22}
   m_LocalScale: {x: 0.5, y: 0.5, z: 40}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1059184329743638838}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6487580213388439213
@@ -156,13 +102,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1595972170914395145
+--- !u!114 &7790381048614182733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,15 +117,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4390976419354512532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e9663071c6464b4aa1ebb1d17ecaea7, type: 3}
+  m_Script: {fileID: 11500000, guid: 29a4d8fdc00936f42bf74ce65dc9571e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 96674918417469273}
-  vel_start: {x: 0, y: 3, z: 20}
+  rb: {fileID: 0}
+  vel_start: {x: 0, y: 0, z: 0}
   accel: {x: 0, y: 0, z: 0}
   destroyOnHit: 0
   lifespan: 3.5
-  piercing_limit: 100
+  piercing_limit: 100000
   damage: 5
 --- !u!54 &96674918417469273
 Rigidbody:

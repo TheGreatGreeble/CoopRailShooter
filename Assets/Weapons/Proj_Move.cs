@@ -19,7 +19,7 @@ public class Proj_Move : MonoBehaviour
     public float piercing_limit = 0;
     private float pierced = 0;
 
-    public float damage = 5;
+    public int damage = 5;
     private HealthManager health;
     private bool hit = false;
 

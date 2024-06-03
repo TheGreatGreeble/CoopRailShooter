@@ -13,8 +13,8 @@ public class Shop : MonoBehaviour
     [SerializeField] public GameObject boomarang2;
     [SerializeField] public GameObject weapon41;
     [SerializeField] public GameObject weapon42;
-    [SerializeField] public GameObject weapon51;
-    [SerializeField] public GameObject weapon52;
+    //[SerializeField] public GameObject weapon51;
+    //[SerializeField] public GameObject weapon52;
 
     [SerializeField] public GameObject canvasShop;
     [SerializeField] public GameObject panel1;
@@ -47,7 +47,7 @@ public class Shop : MonoBehaviour
         player1Weapons.Add(launcher1);
         player1Weapons.Add(boomarang1);
         player1Weapons.Add(weapon41);
-        player1Weapons.Add(weapon51);
+        //player1Weapons.Add(weapon51);
 
         player2Weapons = new List<GameObject>();
         player2Weapons.Add(peaShooter2);
@@ -55,7 +55,7 @@ public class Shop : MonoBehaviour
         player2Weapons.Add(boomarang2
 );
         player2Weapons.Add(weapon42);
-        player2Weapons.Add(weapon52);
+        //player2Weapons.Add(weapon52);
 
         peaShooter1.SetActive(true);
         peaShooter2.SetActive(true);
@@ -79,7 +79,7 @@ public class Shop : MonoBehaviour
         panels.Add(panel2.GetComponent<Image>());
         panels.Add(panel3.GetComponent<Image>());
         panels.Add(panel4.GetComponent<Image>());
-        panels.Add(panel5.GetComponent<Image>());
+        //panels.Add(panel5.GetComponent<Image>());
     }
 
     // Update is called once per frame
