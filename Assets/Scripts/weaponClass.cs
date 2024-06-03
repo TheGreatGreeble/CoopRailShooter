@@ -36,14 +36,14 @@ public class Weapon : MonoBehaviour
 
     public virtual void Shoot()
     {
-        if (player == 1) {
-            bulletRotation = gameObject.transform.rotation;
-        }
-        else {
-            bulletRotation = gameObject.transform.rotation * Quaternion.Euler(0f, 180f, 0f);
-        }
+        // if (player == 1) {
+        //     bulletRotation = gameObject.transform.rotation;
+        // }
+        // else {
+        //     bulletRotation = gameObject.transform.rotation * Quaternion.Euler(0f, 180f, 0f);
+        // }
 
         //spawn bullet
-        Instantiate(baseBullet, gameObject.transform.position, bulletRotation);
+        Instantiate(baseBullet, gameObject.transform.position, gameObject.transform.rotation);
     }
 }
