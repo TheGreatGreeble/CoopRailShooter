@@ -16,7 +16,7 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (remainingHealth == 0) {
+        if (remainingHealth <= 0) {
             //lose game
             SceneManager.LoadScene(0);
         }
