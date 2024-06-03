@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.Sqlite;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,6 +21,7 @@ public class Proj_Move : MonoBehaviour
 
     public float damage = 5;
     private HealthManager health;
+    private bool hit = false;
 
     // Start is called before the first frame update
     public virtual void Start() {
@@ -70,7 +72,10 @@ public class Proj_Move : MonoBehaviour
             if (++pierced > piercing_limit) Destroy(gameObject);
         } else if (other.gameObject.tag == "Player") {
             Debug.Log("PLAYER DAMAGED");
-            health.playerTakeDamage(1);
+            if (!hit) {
+                health.playerTakeDamage(1);
+            }
+            hit = true; 
             if (destroyOnHit) Destroy(gameObject);
         }
         
