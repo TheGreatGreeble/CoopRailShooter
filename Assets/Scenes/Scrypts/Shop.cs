@@ -9,8 +9,8 @@ public class Shop : MonoBehaviour
     [SerializeField] public GameObject peaShooter2;
     [SerializeField] public GameObject launcher1;
     [SerializeField] public GameObject launcher2;
-    [SerializeField] public GameObject weapon31;
-    [SerializeField] public GameObject weapon32;
+    [SerializeField] public GameObject boomarang1;
+    [SerializeField] public GameObject boomarang2;
     [SerializeField] public GameObject weapon41;
     [SerializeField] public GameObject weapon42;
     [SerializeField] public GameObject weapon51;
@@ -45,14 +45,15 @@ public class Shop : MonoBehaviour
         player1Weapons = new List<GameObject>();
         player1Weapons.Add(peaShooter1);
         player1Weapons.Add(launcher1);
-        player1Weapons.Add(weapon31);
+        player1Weapons.Add(boomarang1);
         player1Weapons.Add(weapon41);
         player1Weapons.Add(weapon51);
 
         player2Weapons = new List<GameObject>();
         player2Weapons.Add(peaShooter2);
         player2Weapons.Add(launcher2);
-        player2Weapons.Add(weapon32);
+        player2Weapons.Add(boomarang2
+);
         player2Weapons.Add(weapon42);
         player2Weapons.Add(weapon52);
 

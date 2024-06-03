@@ -42,7 +42,7 @@ public class Proj_Move : MonoBehaviour
     private void FixedUpdate() {
         if (rb != null && canAccel) {
             // update velocity to add custom acceleration
-            rb.AddForce(accel,ForceMode.VelocityChange);
+            rb.AddRelativeForce(accel,ForceMode.VelocityChange);
         }
     }
 
