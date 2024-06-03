@@ -20,6 +20,6 @@ public class HealthbarUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthText.text = health.getRemainingPlayerHealth().ToString();
+        healthText.text = "HEALTH: \n" + health.getRemainingPlayerHealth().ToString();
     }
 }
