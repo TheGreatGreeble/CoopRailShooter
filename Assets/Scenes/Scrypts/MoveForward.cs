@@ -49,6 +49,7 @@ public class MoveForward : MonoBehaviour
 
     void checkAlive(){
         if (health <= 0){
+            MusicManager.AudioManager.goopMusic();
             Destroy(gameObject);
         }
         if (Math.Abs(transform.position.z) <= 5) {
