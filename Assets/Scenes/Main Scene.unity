@@ -29056,7 +29056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 1410388782}
   bgSource: {fileID: 1410388781}
-  backgroundClip: {fileID: 8300000, guid: 87f68f1aaf1574f4c8c4bdcd4d3be34e, type: 3}
+  backgroundClip: {fileID: 8300000, guid: 636535812a1d8e14392885468bf45076, type: 3}
   deathGoops:
   - {fileID: 8300000, guid: bd47762349d8eb84283994f067a56759, type: 3}
 --- !u!4 &1410388784
