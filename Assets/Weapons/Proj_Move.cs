@@ -18,10 +18,13 @@ public class Proj_Move : MonoBehaviour
     public float piercing_limit = 0;
     private float pierced = 0;
 
-    public int damage = 5;
+    public float damage = 5;
+    private HealthManager health;
 
     // Start is called before the first frame update
     public virtual void Start() {
+        GameObject healthManagerObject = GameObject.Find("healthManager");
+        health = healthManagerObject.GetComponent<HealthManager>();
         if (rb != null) {
             // setup the velocity
             //rb.velocity = vel_start;
@@ -66,9 +69,9 @@ public class Proj_Move : MonoBehaviour
             GameObject.FindWithTag("Score").GetComponent<ScoreTracker>().addScore(1);
             if (++pierced > piercing_limit) Destroy(gameObject);
         } else if (other.gameObject.tag == "Player") {
-            Debug.Log("PLAYER KILLED");
-            Destroy(gameObject);
-            SceneManager.LoadScene(0);
+            Debug.Log("PLAYER DAMAGED");
+            health.playerTakeDamage(1);
+            if (destroyOnHit) Destroy(gameObject);
         }
         
     }

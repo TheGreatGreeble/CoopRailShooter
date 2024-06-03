@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System;
 [RequireComponent(typeof(Rigidbody))]
 public class MoveForward : MonoBehaviour
@@ -11,11 +10,15 @@ public class MoveForward : MonoBehaviour
     private Rigidbody rb;
     private MeshRenderer meshRenderer;
     public int health = 10;
+    private HealthManager playerHealth;
 
     void Start()
     {
         // Attempt to get the MeshRenderer component
         meshRenderer = GetComponent<MeshRenderer>();
+
+        GameObject healthManagerObject = GameObject.Find("healthManager");
+        playerHealth = healthManagerObject.GetComponent<HealthManager>();
 
         meshRenderer.enabled = false; // Optionally disable MeshRenderer on start
 
@@ -54,8 +57,8 @@ public class MoveForward : MonoBehaviour
         }
         if (Math.Abs(transform.position.z) <= 5) {
                 Destroy(gameObject); // Destroy the GameObject
-                //lose game
-                SceneManager.LoadScene(0);
+                //take dmg
+                playerHealth.playerTakeDamage(1);
         }
     }
 }
